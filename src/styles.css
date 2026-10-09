@@ -1,0 +1,157 @@
+:root {
+  --bg: #fbfaf8;
+  --surface: #ffffff;
+  --border: #e4e1dc;
+  --text: #1c1b19;
+  --muted: #6b6862;
+  --accent: #b4522a;
+  --warn: #8a5a00;
+  --warn-bg: #fdf5e3;
+  --danger: #a32b2b;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161513;
+    --surface: #201f1c;
+    --border: #35332f;
+    --text: #f0eee9;
+    --muted: #a29e97;
+    --accent: #e0784a;
+    --warn: #e0b45c;
+    --warn-bg: #2a2317;
+    --danger: #e07070;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+#app {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+header p {
+  margin: 0 0 2rem;
+  color: var(--muted);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.7rem;
+  background: var(--surface);
+  color: var(--text);
+}
+
+input {
+  flex: 1 1 22rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.allowance {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.allowance .who {
+  font-weight: 600;
+}
+
+.allowance .detail {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82rem;
+}
+
+.amount {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.warn {
+  background: var(--warn-bg);
+  border-color: var(--warn);
+}
+
+.warn .detail {
+  color: var(--warn);
+}
+
+.note {
+  border-left: 3px solid var(--border);
+  padding: 0.4rem 0 0.4rem 0.9rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 1.5rem 0;
+}
+
+.error {
+  color: var(--danger);
+}
+
+a {
+  color: inherit;
+}
+
+footer {
+  margin-top: 3rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
